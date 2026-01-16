@@ -66,7 +66,7 @@ int main() {
         cin >> ch;
 
         switch (ch) {
-            case 1: docTxtGhiNhiPhan(); break;
+            case 1:
             case 2: lietKe(); break;
             case 3: maxGiaDongCua(); break;
             case 4: maxKhoiLuong(); break;
