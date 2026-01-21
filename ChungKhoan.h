@@ -5,9 +5,8 @@ using namespace std;
 class ChungKhoan {
 public:
     char maCK[10];
-
     float giaTran, giaSan, giaTC;
-
+    
     float giaMua[3];
     long klMua[3];
 
@@ -25,8 +24,6 @@ public:
 
     void parse(string line);
     void hienThi() const;
-
-    
     float getGiaDongCua() const;
     long getKhoiLuongGiaoDich() const;
 };
