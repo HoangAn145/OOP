@@ -18,7 +18,7 @@ public:
     float giaBan[3];
     long klBan[3];
 
-    long tongKL;                 // TỔNG KHỐI LƯỢNG GIAO DỊCH TRONG NGÀY
+    long tongKL;
     float moCua, caoNhat, thapNhat;
 
     long nnMua, nnBan;
@@ -26,7 +26,7 @@ public:
     void parse(string line);
     void hienThi() const;
 
-    // ===== GETTER CHUẨN THEO ĐỀ =====
+    
     float getGiaDongCua() const;
     long getKhoiLuongGiaoDich() const;
 };
