@@ -1,8 +1,14 @@
 #include <iostream>
-#include <fstream>
-#include <vector>
+#include "TacVuChuyenDoi.h"
+#include "TacVuLietKe.h"
+#include "TacVuTimMax.h"
+ 
+using namespace std;
+ 
 int main() {
     int ch;
+    TacVu* tacVu = nullptr;
+ 
     do {
         cout << "\n===== QUAN LY CHUNG KHOAN (OOP/SPLIT FILES) =====\n";
         cout << "1. Chuyen doi du lieu (ck.txt -> ck.dat)\n";
@@ -11,8 +17,10 @@ int main() {
         cout << "4. Tim khoi luong giao dich cao nhat\n";
         cout << "0. Thoat\n";
         cout << "Lua chon: ";
-        cin >> ch
-
+        cin >> ch;
+ 
+        if (tacVu != nullptr) { delete tacVu; tacVu = nullptr; }
+ 
         switch (ch) {
             case 1: tacVu = new TacVuChuyenDoi(); break;
             case 2: tacVu = new TacVuLietKe(); break;
@@ -21,7 +29,11 @@ int main() {
             case 0: cout << "Ket thuc.\n"; break;
             default: cout << "Lua chon khong hop le!\n";
         }
+ 
+        if (tacVu != nullptr) tacVu->thucHien();
+ 
     } while (ch != 0);
-
+ 
+    if (tacVu != nullptr) delete tacVu;
     return 0;
 }
