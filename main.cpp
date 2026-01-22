@@ -10,8 +10,8 @@ int main() {
     TacVu* tacVu = nullptr;
  
     do {
-        cout << "\n===== QUAN LY CHUNG KHOAN (OOP/SPLIT FILES) =====\n";
-        cout << "1. Chuyen doi du lieu (ck.txt -> ck.dat)\n";
+        cout << "\n===== QUAN LY CHUNG KHOAN =====\n";
+        cout << "1. Chuyen doi du lieu \n";
         cout << "2. Liet ke danh sach\n";
         cout << "3. Tim gia dong cua cao nhat\n";
         cout << "4. Tim khoi luong giao dich cao nhat\n";
@@ -27,7 +27,7 @@ int main() {
             case 3: tacVu = new TacVuTimMaxGia(); break;
             case 4: tacVu = new TacVuTimMaxKL(); break;
             case 0: cout << "Ket thuc.\n"; break;
-            default: cout << "Lua chon khong hop le!\n";
+            default: cout << "Lua chon khong dung\n";
         }
  
         if (tacVu != nullptr) tacVu->thucHien();

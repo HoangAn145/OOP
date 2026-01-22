@@ -8,7 +8,6 @@
 
 using namespace std;
 
-// --- Helper Functions (Ẩn trong file cpp) ---
 string clean(string s) {
     string r;
     for (char c : s) if (c != ',') r += c;
@@ -50,7 +49,6 @@ string formatVol(long kl) {
     return to_string(kl);
 }
 
-// --- Implementation ---
 void ChungKhoan::parse(string line) {
     stringstream ss(line);
     string token;

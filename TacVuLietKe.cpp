@@ -7,7 +7,7 @@ using namespace std;
  
 void TacVuLietKe::thucHien() {
     ifstream fin("ck.dat", ios::binary);
-    if (!fin) { cout << "Chua co file ck.dat!\n"; return; }
+    if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     
     const int W_MA = 6, W_GIA = 7, W_PAIR = 16, W_VOL = 10;

@@ -23,7 +23,7 @@ static void inHeaderNgan() {
  
 void TacVuTimMaxGia::thucHien() {
     ifstream fin("ck.dat", ios::binary);
-    if (!fin) { cout << "Chua co file ck.dat!\n"; return; }
+    if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     ChungKhoan ck, maxCK;
     bool first = true, foundAny = false;
@@ -46,7 +46,7 @@ void TacVuTimMaxGia::thucHien() {
  
 void TacVuTimMaxKL::thucHien() {
     ifstream fin("ck.dat", ios::binary);
-    if (!fin) { cout << "Chua co file ck.dat!\n"; return; }
+    if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     ChungKhoan ck, maxCK;
     bool first = true, foundAny = false;

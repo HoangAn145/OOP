@@ -9,7 +9,7 @@ void TacVuChuyenDoi::thucHien() {
     ofstream fout("ck.dat", ios::binary);
  
     if (!fin || !fout) {
-        cout << "Loi mo file!\n";
+        cout << "Loi mo file\n";
         return;
     }
     string line;
