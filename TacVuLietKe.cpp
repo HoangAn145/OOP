@@ -10,12 +10,14 @@ void TacVuLietKe::thucHien() {
     if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     
-    const int W_MA = 6, W_GIA = 7, W_PAIR = 16, W_VOL = 10;
-    cout << left << setw(W_MA) << "Ma"
+    const int W_MA = 6, W_GIA = 10, W_PAIR = 16, W_VOL = 10;
+    cout << left << setw(W_MA) << "MaCK"
 << right 
-<< setw(W_GIA) << "Tran" << setw(W_GIA) << "San" << setw(W_GIA) << "TC"
-<< setw(W_PAIR) << "Mua 3" << setw(W_PAIR) << "Mua 2" << setw(W_PAIR) << "Mua 1"
-<< setw(W_PAIR) << "Khop Lenh" << setw(W_GIA) << "+/-"
+<< setw(W_GIA) << "Gia Tran" << setw(W_GIA) << "Gia San" << setw(W_GIA) << "Gia TC"
+<< setw(W_PAIR) << "Du Mua 3" << setw(W_PAIR) << "Du Mua 2" << setw(W_PAIR) << "Du Mua 1"
+<< setw(W_GIA) << "Gia Khop"
+<< setw(W_VOL) << "KL Khop"
+<< setw(W_GIA) << "+/-"
 << setw(W_PAIR) << "Ban 1" << setw(W_PAIR) << "Ban 2" << setw(W_PAIR) << "Ban 3"
 << setw(W_VOL) << "TongKL"
 << setw(W_GIA) << "Mo" << setw(W_GIA) << "Cao" << setw(W_GIA) << "Thap"

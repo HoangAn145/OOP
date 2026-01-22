@@ -78,14 +78,15 @@ void ChungKhoan::parse(string line) {
 }
 
 void ChungKhoan::hienThi() const {
-    const int W_MA = 6, W_GIA = 7, W_PAIR = 16, W_VOL = 10;
+    const int W_MA = 6, W_GIA = 10, W_PAIR = 16, W_VOL = 10;
     cout << left << setw(W_MA) << maCK
          << right 
          << setw(W_GIA) << formatPrice(giaTran) << setw(W_GIA) << formatPrice(giaSan) << setw(W_GIA) << formatPrice(giaTC)
          << setw(W_PAIR) << formatPair(giaMua[2], klMua[2])
          << setw(W_PAIR) << formatPair(giaMua[1], klMua[1])
          << setw(W_PAIR) << formatPair(giaMua[0], klMua[0])
-         << setw(W_PAIR) << formatPair(giaKhop, klKhop)
+         << setw(W_GIA) << formatPrice(giaKhop)
+         << setw(W_VOL) << formatVol(klKhop)
          << setw(W_GIA) << formatPrice(thayDoi)
          << setw(W_PAIR) << formatPair(giaBan[0], klBan[0])
          << setw(W_PAIR) << formatPair(giaBan[1], klBan[1])
