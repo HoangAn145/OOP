@@ -15,14 +15,12 @@ void TacVuChuyenDoi::thucHien() {
     string line;
     getline(fin, line); getline(fin, line); 
  
-    int count = 0;
     while (getline(fin, line)) {
         if (line.empty()) continue;
         ChungKhoan ck;
         ck.parse(line);
         fout.write((char*)&ck, sizeof(ChungKhoan));
-        count++;
     }
     fin.close(); fout.close();
-    cout << "Da chuyen doi " << count << " ma sang ck.dat\n";
+    cout << "Da chuyen doi sang ck.dat\n";
 }

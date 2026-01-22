@@ -17,14 +17,12 @@ string clean(string s) {
 float stringToFloat(string s) {
     if (s.empty()) return NAN;
     string s_clean = clean(s);
-    if (s_clean.empty()) return NAN;
     try { return stof(s_clean); } catch (...) { return NAN; }
 }
 
 long stringToLong(string s) {
     if (s.empty()) return -1;
     string s_clean = clean(s);
-    if (s_clean.empty()) return -1;
     try { return stol(s_clean); } catch (...) { return -1; }
 }
 

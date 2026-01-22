@@ -7,7 +7,7 @@
 using namespace std;
  
 
-static void indaumuc() {
+void indaumuc() {
     cout << left << setw(6) << "MaCK"
         << right 
         << setw(10) << "Gia Tran" << setw(10) << "Gia San" << setw(10) << "Gia TC"
@@ -26,21 +26,21 @@ void TacVuTimMaxGia::thucHien() {
     if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     ChungKhoan ck, maxCK;
-    bool first = true, foundAny = false;
+    bool first = true, found = false;
  
     while (fin.read((char*)&ck, sizeof(ChungKhoan))) {
         float gia = ck.getGiaDongCua();
         if (std::isnan(gia)) continue;
         if (first || gia > maxCK.getGiaDongCua()) {
-            maxCK = ck; first = false; foundAny = true;
+            maxCK = ck; first = false; found = true;
         }
     }
  
-    if (foundAny) {
+    if (found) {
         cout << "Ma co gia dong cua cao nhat:\n";
         indaumuc();
         maxCK.hienThi();
-    } else cout << "Khong tim thay du lieu.\n";
+    } else cout << "Khong tim thay du lieu\n";
     fin.close();
 }
  
@@ -49,20 +49,20 @@ void TacVuTimMaxKL::thucHien() {
     if (!fin) { cout << "Chua co file ck.dat\n"; return; }
  
     ChungKhoan ck, maxCK;
-    bool first = true, foundAny = false;
+    bool first = true, found = false;
  
     while (fin.read((char*)&ck, sizeof(ChungKhoan))) {
         long kl = ck.getKhoiLuongGiaoDich();
         if (kl <= 0) continue;
         if (first || kl > maxCK.getKhoiLuongGiaoDich()) {
-            maxCK = ck; first = false; foundAny = true;
+            maxCK = ck; first = false; found = true;
         }
     }
  
-    if (foundAny) {
+    if (found) {
         cout << "Ma co khoi luong giao dich lon nhat:\n";
         indaumuc();
         maxCK.hienThi();
-    } else cout << "Khong tim thay du lieu.\n";
+    } else cout << "Khong tim thay du lieu\n";
     fin.close();
 }
