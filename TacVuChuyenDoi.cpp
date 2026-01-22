@@ -24,5 +24,5 @@ void TacVuChuyenDoi::thucHien() {
         count++;
     }
     fin.close(); fout.close();
-    cout << "Da chuyen doi " << count << " ban ghi sang ck.dat\n";
+    cout << "Da chuyen doi " << count << " ma sang ck.dat\n";
 }

@@ -7,18 +7,18 @@
 using namespace std;
  
 
-static void inHeaderNgan() {
-    const int W_MA = 6, W_GIA = 7, W_PAIR = 16, W_VOL = 10;
-    cout << left << setw(W_MA) << "Ma"
-<< right 
-<< setw(W_GIA) << "Tran" << setw(W_GIA) << "San" << setw(W_GIA) << "TC"
-<< setw(W_PAIR) << "Mua 3" << setw(W_PAIR) << "Mua 2" << setw(W_PAIR) << "Mua 1"
-<< setw(W_PAIR) << "Khop Lenh" << setw(W_GIA) << "+/-"
-<< setw(W_PAIR) << "Ban 1" << setw(W_PAIR) << "Ban 2" << setw(W_PAIR) << "Ban 3"
-<< setw(W_VOL) << "TongKL"
-<< setw(W_GIA) << "Mo" << setw(W_GIA) << "Cao" << setw(W_GIA) << "Thap"
-<< setw(W_VOL) << "NNMua" << setw(W_VOL) << "NNBan" << endl;
-    cout << setfill('-') << setw(175) << "-" << setfill(' ') << endl;
+static void indaumuc() {
+    cout << left << setw(6) << "MaCK"
+        << right 
+        << setw(10) << "Gia Tran" << setw(10) << "Gia San" << setw(10) << "Gia TC"
+        << setw(16) << "Du Mua 3" << setw(16) << "Du Mua 2" << setw(16) << "Du Mua 1"
+        << setw(10) << "Gia Khop"
+        << setw(10) << "KL Khop"
+        << setw(10) << "+/-"
+        << setw(16) << "Ban 1" << setw(16) << "Ban 2" << setw(16) << "Ban 3"
+        << setw(10) << "TongKL"
+        << setw(10) << "Mo Cua" << setw(10) << "Cao" << setw(10) << "Thap"
+        << setw(10) << "NNMua" << setw(10) << "NNBan" << endl;
 }
  
 void TacVuTimMaxGia::thucHien() {
@@ -30,17 +30,17 @@ void TacVuTimMaxGia::thucHien() {
  
     while (fin.read((char*)&ck, sizeof(ChungKhoan))) {
         float gia = ck.getGiaDongCua();
-        if (std::isnan(gia) || gia == 0) continue;
+        if (std::isnan(gia)) continue;
         if (first || gia > maxCK.getGiaDongCua()) {
             maxCK = ck; first = false; foundAny = true;
         }
     }
  
     if (foundAny) {
-        cout << "\n=== MA CO GIA DONG CUA CAO NHAT ===\n";
-        inHeaderNgan();
+        cout << "Ma co gia dong cua cao nhat:\n";
+        indaumuc();
         maxCK.hienThi();
-    } else cout << "\nKhong tim thay du lieu.\n";
+    } else cout << "Khong tim thay du lieu.\n";
     fin.close();
 }
  
@@ -60,9 +60,9 @@ void TacVuTimMaxKL::thucHien() {
     }
  
     if (foundAny) {
-        cout << "\n=== MA CO KHOI LUONG GD CAO NHAT ===\n";
-        inHeaderNgan();
+        cout << "Ma co khoi luong giao dich lon nhat:\n";
+        indaumuc();
         maxCK.hienThi();
-    } else cout << "\nKhong tim thay du lieu.\n";
+    } else cout << "Khong tim thay du lieu.\n";
     fin.close();
 }

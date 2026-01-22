@@ -8,21 +8,18 @@ using namespace std;
 void TacVuLietKe::thucHien() {
     ifstream fin("ck.dat", ios::binary);
     if (!fin) { cout << "Chua co file ck.dat\n"; return; }
- 
-    
-    const int W_MA = 6, W_GIA = 10, W_PAIR = 16, W_VOL = 10;
-    cout << left << setw(W_MA) << "MaCK"
-<< right 
-<< setw(W_GIA) << "Gia Tran" << setw(W_GIA) << "Gia San" << setw(W_GIA) << "Gia TC"
-<< setw(W_PAIR) << "Du Mua 3" << setw(W_PAIR) << "Du Mua 2" << setw(W_PAIR) << "Du Mua 1"
-<< setw(W_GIA) << "Gia Khop"
-<< setw(W_VOL) << "KL Khop"
-<< setw(W_GIA) << "+/-"
-<< setw(W_PAIR) << "Ban 1" << setw(W_PAIR) << "Ban 2" << setw(W_PAIR) << "Ban 3"
-<< setw(W_VOL) << "TongKL"
-<< setw(W_GIA) << "Mo" << setw(W_GIA) << "Cao" << setw(W_GIA) << "Thap"
-<< setw(W_VOL) << "NNMua" << setw(W_VOL) << "NNBan" << endl;
-    cout << setfill('-') << setw(175) << "-" << setfill(' ') << endl;
+
+    cout << left << setw(6) << "MaCK"
+        << right 
+        << setw(10) << "Gia Tran" << setw(10) << "Gia San" << setw(10) << "Gia TC"
+        << setw(16) << "Du Mua 3" << setw(16) << "Du Mua 2" << setw(16) << "Du Mua 1"
+        << setw(10) << "Gia Khop"
+        << setw(10) << "KL Khop"
+        << setw(10) << "+/-"
+        << setw(16) << "Ban 1" << setw(16) << "Ban 2" << setw(16) << "Ban 3"
+        << setw(10) << "TongKL"
+        << setw(10) << "Mo Cua" << setw(10) << "Cao" << setw(10) << "Thap"
+        << setw(10) << "NNMua" << setw(10) << "NNBan" << endl;
  
     ChungKhoan ck;
     while (fin.read((char*)&ck, sizeof(ChungKhoan))) {

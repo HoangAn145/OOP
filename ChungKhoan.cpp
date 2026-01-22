@@ -28,7 +28,7 @@ long stringToLong(string s) {
     try { return stol(s_clean); } catch (...) { return -1; }
 }
 
-string formatPair(float gia, long kl) {
+string dinhdangCap(float gia, long kl) {
     stringstream ss;
     if (std::isnan(gia) && kl == -1) return "";
     if (!std::isnan(gia)) ss << fixed << setprecision(2) << gia; else ss << "   ";
@@ -37,14 +37,14 @@ string formatPair(float gia, long kl) {
     return ss.str();
 }
 
-string formatPrice(float gia) {
+string dinhdangGia(float gia) {
     if (std::isnan(gia)) return "";
     stringstream ss;
     ss << fixed << setprecision(2) << gia;
     return ss.str();
 }
 
-string formatVol(long kl) {
+string dinhdangKl(long kl) {
     if (kl == -1) return "";
     return to_string(kl);
 }
@@ -60,40 +60,35 @@ void ChungKhoan::parse(string line) {
     giaTran = stringToFloat(tokens[1]);
     giaSan  = stringToFloat(tokens[2]);
     giaTC   = stringToFloat(tokens[3]);
-
     giaMua[2] = stringToFloat(tokens[4]); klMua[2] = stringToLong(tokens[5]);
     giaMua[1] = stringToFloat(tokens[6]); klMua[1] = stringToLong(tokens[7]);
     giaMua[0] = stringToFloat(tokens[8]); klMua[0] = stringToLong(tokens[9]);
-
     giaKhop = stringToFloat(tokens[10]); klKhop = stringToLong(tokens[11]);
     thayDoi = stringToFloat(tokens[12]);
-
     giaBan[0] = stringToFloat(tokens[13]); klBan[0] = stringToLong(tokens[14]);
     giaBan[1] = stringToFloat(tokens[15]); klBan[1] = stringToLong(tokens[16]);
     giaBan[2] = stringToFloat(tokens[17]); klBan[2] = stringToLong(tokens[18]);
-
     tongKL = stringToLong(tokens[19]);
     moCua = stringToFloat(tokens[20]); caoNhat = stringToFloat(tokens[21]); thapNhat = stringToFloat(tokens[22]);
     nnMua = stringToLong(tokens[23]); nnBan = stringToLong(tokens[24]);
 }
 
 void ChungKhoan::hienThi() const {
-    const int W_MA = 6, W_GIA = 10, W_PAIR = 16, W_VOL = 10;
-    cout << left << setw(W_MA) << maCK
+    cout << left << setw(6) << maCK
          << right 
-         << setw(W_GIA) << formatPrice(giaTran) << setw(W_GIA) << formatPrice(giaSan) << setw(W_GIA) << formatPrice(giaTC)
-         << setw(W_PAIR) << formatPair(giaMua[2], klMua[2])
-         << setw(W_PAIR) << formatPair(giaMua[1], klMua[1])
-         << setw(W_PAIR) << formatPair(giaMua[0], klMua[0])
-         << setw(W_GIA) << formatPrice(giaKhop)
-         << setw(W_VOL) << formatVol(klKhop)
-         << setw(W_GIA) << formatPrice(thayDoi)
-         << setw(W_PAIR) << formatPair(giaBan[0], klBan[0])
-         << setw(W_PAIR) << formatPair(giaBan[1], klBan[1])
-         << setw(W_PAIR) << formatPair(giaBan[2], klBan[2])
-         << setw(W_VOL) << formatVol(tongKL)
-         << setw(W_GIA) << formatPrice(moCua) << setw(W_GIA) << formatPrice(caoNhat) << setw(W_GIA) << formatPrice(thapNhat)
-         << setw(W_VOL) << formatVol(nnMua) << setw(W_VOL) << formatVol(nnBan)
+         << setw(10) << dinhdangGia(giaTran) << setw(10) << dinhdangGia(giaSan) << setw(10) << dinhdangGia(giaTC)
+         << setw(16) << dinhdangCap(giaMua[2], klMua[2])
+         << setw(16) << dinhdangCap(giaMua[1], klMua[1])
+         << setw(16) << dinhdangCap(giaMua[0], klMua[0])
+         << setw(10) << dinhdangGia(giaKhop)
+         << setw(10) << dinhdangKl(klKhop)
+         << setw(10) << dinhdangGia(thayDoi)
+         << setw(16) << dinhdangCap(giaBan[0], klBan[0])
+         << setw(16) << dinhdangCap(giaBan[1], klBan[1])
+         << setw(16) << dinhdangCap(giaBan[2], klBan[2])
+         << setw(10) << dinhdangKl(tongKL)
+         << setw(10) << dinhdangGia(moCua) << setw(10) << dinhdangGia(caoNhat) << setw(10) << dinhdangGia(thapNhat)
+         << setw(10) << dinhdangKl(nnMua) << setw(10) << dinhdangKl(nnBan)
          << endl;
 }
 
